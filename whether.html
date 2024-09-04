@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?weather,sky') no-repeat center center/cover;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 34px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        input {
+            padding: 15px;
+            border-radius: 25px;
+            border: 2px solid #333;
+            width: calc(100% - 32px);
+            margin-bottom: 20px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
+            outline: none;
+            text-align: center;
+        }
+        button {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background-color: #ff7e5f;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+        #weather-info {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+            font-size: 18px;
+            color: #333;
+            text-align: left;
+        }
+        #weather-info h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .weather-detail {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <p>Enter a location to get the current weather, or use your current location:</p>
+        <input type="text" id="location-input" placeholder="Enter location">
+        <button onclick="getWeatherByInput()">Get Weather</button>
+        <button onclick="getWeatherByLocation()">Use Current Location</button>
+
+        <div id="weather-info">
+            <h2></h2>
+            <p class="weather-detail" id="temperature"></p>
+            <p class="weather-detail" id="description"></p>
+            <p class="weather-detail" id="humidity"></p>
+            <p class="weather-detail" id="wind"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
